@@ -4,6 +4,6 @@ namespace MovieStore.Models.DTO
 {
     public class MovieListVm
     {
-        public IQueryable<Movie> MovieList{ get; set; }
+        public IQueryable<Movie>? MovieList { get; set; }
     }
 }

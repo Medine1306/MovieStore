@@ -3,9 +3,9 @@ using MovieStore.Models.DTO;
 
 namespace MovieStore.Repositories.Abstract
 {
-	public interface IMovieService
-	{
-		bool Add(Movie model);
+    public interface IMovieService
+    {
+        bool Add(Movie model);
         bool Update(Movie model);
         Movie GetById(int id);
         bool Delete(int id);

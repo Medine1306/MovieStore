@@ -23,7 +23,7 @@ namespace MovieStore.Controllers
         public IActionResult Add()
         {
             var model = new Movie();
-            model.GenreList = _genService.List().Select(a => new SelectListItem{Text=a.GenreName, Value=a.Id.ToString()});
+            model.GenreList = _genService.List().Select(a => new SelectListItem { Text = a.GenreName, Value = a.Id.ToString() });
             return View(model);
         }
         [HttpPost]
@@ -40,7 +40,7 @@ namespace MovieStore.Controllers
             var imageName = fileResult.Item2;
             model.MovieImage = imageName;
             var result = _movieService.Add(model);
-            if(result)
+            if (result)
             {
                 TempData["msg"] = "Added Successfully";
                 return RedirectToAction(nameof(Add));
@@ -84,8 +84,8 @@ namespace MovieStore.Controllers
         public IActionResult Delete(int id)
         {
             var result = _movieService.Delete(id);
-            
-                return RedirectToAction(nameof(MovieList));
-            }
+
+            return RedirectToAction(nameof(MovieList));
         }
     }
+}

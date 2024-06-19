@@ -15,7 +15,7 @@ namespace MovieStore.Repositories.Implementation
         {
             try
             {
-               
+
                 ctx.Movie.Add(model);
                 ctx.SaveChanges();
                 foreach (int genreId in model.Genres)
@@ -30,7 +30,7 @@ namespace MovieStore.Repositories.Implementation
                 ctx.SaveChanges();
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -43,7 +43,7 @@ namespace MovieStore.Repositories.Implementation
                 var data = this.GetById(id);
                 if (data == null)
                     return false;
-                    ctx.Movie.Remove(data);
+                ctx.Movie.Remove(data);
                 ctx.SaveChanges();
                 return true;
             }
@@ -55,7 +55,7 @@ namespace MovieStore.Repositories.Implementation
 
         public Movie GetById(int id)
         {
-           
+
             return ctx.Movie.Find(id);
         }
 
